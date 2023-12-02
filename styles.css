@@ -8,29 +8,38 @@
 }
 
 :root {
-    ---main-bg-color: linear-gradient(90deg, rgba(255,247,173,1) 0%, rgba(255,169,249,1) 100%);
+    ---main-bg-color: linear-gradient(90deg, rgba(255, 247, 173, 1) 0%, rgba(255, 169, 249, 1) 100%);
     ---padding: 0 4%;
-    ---main-text-color:rgb(135, 28, 235);
+    ---main-text-color: rgb(135, 28, 235);
+    ---text-color: black;
+}
+
+.dark-theme {
+    ---main-bg-color: linear-gradient(128deg, rgba(44,41,41,1) 0%, rgba(51,49,51,1) 48%, rgba(65,66,65,1) 100%);
+    ---text-color: #fff;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background:var(---main-bg-color);
+    background: var(---main-bg-color);
     margin-top: 70px;
+    padding: var(---padding);
 }
 
 li {
     list-style: none;
+    color: var(---text-color);
 }
 
 a {
-    position: relative;
     text-decoration: none;
-    color: black;
+    position: relative;
+    color: var(---text-color);
 }
 
 p {
     margin: 0;
+    color: var(---text-color);
 }
 
 
@@ -40,23 +49,30 @@ p {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background:var(---main-bg-color);
-    width: 100%;
+    justify-content: space-between;
+    background: #0000000f;
+    width: 92%;
     height: 70px;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     z-index: 9999;
+    padding: var(---padding);
 }
 
-.left-container>img{
+.left-container a #logo-x {
     width: 45px;
     border-radius: 50%;
-    border: 1px solid blue;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.left-container a #logo-x:hover {
+    transform: rotateY(360deg);
 }
 
 .mid-container {
+    font-weight: bolder;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -68,7 +84,7 @@ p {
     gap: 2rem;
 }
 
-.navbar-links > a::after {
+.navbar-links>a::after {
     content: "";
     position: absolute;
     background-color: var(---main-text-color);
@@ -79,46 +95,356 @@ p {
     transition: 0.3s;
 }
 
-.navbar-links > a:hover:after {
+.navbar-links>a:hover:after {
     width: 100%;
 }
 
-.navbar-links > a > li:hover {
+.navbar-links>a>li {
+    transition: 0.3s;
+}
+
+.navbar-links>a>li:hover {
     color: var(---main-text-color);
+    transform: scale(1.1);
+}
+
+.contact-mode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 #contact-btn {
-    width: 7vw;
-    height: 4.5vh;
-    background: linear-gradient(90deg, rgba(52,20,104,1) 0%, rgba(51,68,158,1) 57%, rgba(143,67,201,1) 100%);
+    width: 110px;
+    height: 38px;
+    background: linear-gradient(90deg, rgba(52, 20, 104, 1) 0%, rgba(51, 68, 158, 1) 57%, rgba(143, 67, 201, 1) 100%);
     color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
-    box-shadow: 5px 10px rgba(52,20,104,1);
+    box-shadow: 0 0 5px var(---main-text-color);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-btn:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
+}
+
+#d-l-mode {
+    width: 35px;
+    filter: drop-shadow(0 0 5px var(---text-color));
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#d-l-mode:hover {
+    transform: scale(1.2);
+}
+
+.menu-close-btn {
+    display: none;
+    z-index: 999;
+}
+
+.menu-close-btn #nav-btn {
+    width: 35px;
+    cursor: pointer;
+}
+
+#nav-btn:hover {
+    filter: drop-shadow(0 0 5px var(---text-color));
+}
+
+.cancel-btn {
+    display: none;
 }
 
 
+.profile-section {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
 
+.about-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
 
+.about-box h1 {
+    color: var(---text-color);
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.2;
+}
 
+.about-box h1 span {
+    color: var(---main-text-color);
+}
 
+.about-box p {
+    font-size: 1rem;
+    margin: 30px 0;
+}
 
+.btn-box {
+    display: flex;
+    gap: 2rem;
+}
 
+.btn-box .btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    background: black;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s;
+    margin:35px 0;
+}
 
+.btn-box .btn:hover {
+    cursor:pointer;
+    box-shadow: 0px 0px 10px var(---text-color);
+    transform: scale(1.05);
+    border-radius: 15px;
+}
 
+.image-box {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 0;
+}
 
+.image-box img {
+    border-radius: 15px;
+    width: 40rem;
+}
 
+.social-media-links {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+}
 
+.social-media-links img {
+    width: 45px;
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: 0.3s linear;
+}
 
+.social-media-links .codepen-box img {
+    width: 45px;
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: 0.3s linear;
+    border-radius: 50%;
+}
 
+.social-media-links .codepen-box img:hover {
+    transform:scale(1.2) rotate(360deg);
+    filter: grayscale(0);
+    background-color: #fff;
+}
 
-
-
-
+.social-media-links img:hover {
+    transform:scale(1.2) rotate(360deg);
+    filter: grayscale(0);
+}
 
 .faltu {
     margin-top: 100000px;
+}
+
+/* ---------------------------------
+           RESPONSIVE
+--------------------------------- */
+
+
+
+/* ------------------------LAPTOP 1440PX---------------------- */
+
+
+
+
+
+
+/* ------------------------LAPTOP 1024PX---------------------- */
+
+@media screen and (max-width:1080px) {
+    .about-box h1 {
+        color: var(---text-color);
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .image-box img {
+        border-radius: 15px;
+        width: 25rem;
+    }
+}
+
+/* ------------------------TABLET 768PX---------------------- */
+
+@media screen and (max-width:958px) {
+
+    .menu-close-btn {
+        display: block;
+    }
+
+    .menu-close-btn #menu-btn {
+        display: inline;
+    }
+
+    header {
+        position: relatived;
+        overflow: hidden;
+    }
+
+    .mid-container {
+        background: #0000008a;
+        box-shadow: 0 0 5px var(---main-text-color);
+        position: absolute;
+        width: 30%;
+        top: 70px;
+        right: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        transition: all 0.3s linear;
+        transform: translateX(100%);
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .mid-container ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    .mid-container ul a li {
+        margin: 20px 0;
+
+    }
+
+    .active {
+        transform: translateX(0);
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .info-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+
+    .image-box {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-box h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .about-box p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .image-box img {
+        width: 90%;
+    }
+
+}
+
+/* ------------------------MOBILE L 425PX---------------------- */
+
+@media screen and (max-width: 500px) {
+
+    .info-container {
+        gap: 0;
+    }
+
+    .btn-box {
+        flex-wrap: wrap;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-box .btn {
+        margin: 0;
+    }
+
+    .social-media-links {
+        margin: 40px 0;
+        gap: 1rem;
+    }
+
+    .about-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-box p {
+        font-size: 1rem;
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
+
+/* ------------------------MOBILE M 375PX---------------------- */
+
+@media screen and (max-width: 380px) {
+    
+}
+
+
+/* ------------------------MOBILE S 320PX---------------------- */
+
+@media screen and (max-width: 350px) {
+    
 }

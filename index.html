@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- ----------------------NAVBAR SECTION-------------------- -->
@@ -13,10 +15,10 @@
     <header>
         <nav class="navbar">
             <div class="left-container">
-                <img src="assets/logo.png" alt="my-logo" id="logo-x">
+                <a href="#"><img src="assets/logo-y.png" alt="my-logo" id="logo-x"></a>
             </div>
             <div class="mid-container">
-                <ul class="navbar-links flex">
+                <ul class="navbar-links">
                     <a href="#">
                         <li>Home</li>
                     </a>
@@ -30,20 +32,58 @@
                         <li>Projects</li>
                     </a>
                     <a href="#">
-                        <li>Contact Me</li>
+                        <li>Testimonial</li>
                     </a>
                 </ul>
             </div>
             <div class="contact-mode-container">
                 <button id="contact-btn">Contact</button>
+                <img src="./assets/moon.png" id="d-l-mode">
+            </div>
+
+            <div class="menu-close-btn">
+                <img src="./assets/list.png" id="nav-btn" class="menu-btn">
+                <img src="./assets/cancel.png" id="nav-btn" class="cancel-btn">
             </div>
         </nav>
     </header>
 
+    <!-- ----------------------MAIN SECTION-------------------- -->
+
+    <section class="profile-section">
+        <div class="info-container">
+            <div class="about-box">
+                <h1>Hey there!🙋🏻‍♂️<br>I'm <span>Amit</span>.<br>And I'm a Passionate<br><span>Web Developer</span>
+                </h1>
+                <p>Front-end Developer capable of Pushing potential. Constantly looking for ways to add values to things
+                    by constantly incorporating myself into it</p>
+                <div class="btn-box">
+                    <button class="btn" id="resume-btn">Resume</button>
+                    <button class="btn" id="github-btn">Git Hub</button>
+                </div>
+
+                <div class="social-media-links">
+                    <a href="https://github.com/theamitrawat"><img src="./assets/github.png" alt="github"></a>
+                    <div class="codepen-box">
+                        <a href="https://codepen.io/theamitrawat"><img src="./assets/codepen.png" alt="codepen"></a>
+                    </div>
+                    <a href="www.linkedin.com/in/theamitrawat"><img src="./assets/linkedin.png" alt="linkedin"></a>
+                    <a href="https://www.instagram.com/theamitrawat16/"><img src="./assets/instagram.png" alt="instagram"></a>
+                    <a href="https://twitter.com/theamitrawat16"><img src="./assets/twitter.png" alt="twitter"></a>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="./assets/my-pic.png">
+            </div>
+        </div>
+    </section>
 
 
     <div class="faltu">
         ja;ioshdfpowq;hfopuh
     </div>
+
+    <script src="nav.js"></script>
 </body>
+
 </html>
