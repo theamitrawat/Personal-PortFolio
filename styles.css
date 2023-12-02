@@ -330,16 +330,16 @@ p {
     }
 
     .mid-container {
-        background: #0000008a;
+        background: var(---main-bg-color);
         box-shadow: 0 0 5px var(---main-text-color);
         position: absolute;
-        width: 30%;
+        width: 50vw;
         top: 70px;
         right: 0;
         overflow: hidden;
         display: flex;
         align-items: start;
-        justify-content: center;
+        justify-content: start;
         transition: all 0.3s linear;
         transform: translateX(100%);
         pointer-events: none;
@@ -412,6 +412,10 @@ p {
         align-items: center;
     }
 
+    .mid-container {
+        width: 70vw;
+    }
+
     .btn-box .btn {
         margin: 0;
     }
@@ -439,7 +443,7 @@ p {
 /* ------------------------MOBILE M 375PX---------------------- */
 
 @media screen and (max-width: 380px) {
-    
+
 }
 
 
